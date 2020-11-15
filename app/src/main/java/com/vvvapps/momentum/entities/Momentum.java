@@ -9,6 +9,15 @@ import com.vvvapps.momentum.constants.SQLConstants;
 
 import java.time.LocalDate;
 
+/*
+TODO: Redefine database
+
+Momentum one-to-many Day
+Day one-to-many Objectives (includes status)
+Objectives many-to-many ObjectivesDict
+
+ */
+
 @Entity
 public class Momentum {
 

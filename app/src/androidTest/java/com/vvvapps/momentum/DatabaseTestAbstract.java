@@ -7,9 +7,9 @@ import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.vvvapps.momentum.dao.DayDao;
-import com.vvvapps.momentum.dao.DayObjectiveCrossRefDao;
 import com.vvvapps.momentum.dao.MomentumDao;
 import com.vvvapps.momentum.dao.ObjectiveDao;
+import com.vvvapps.momentum.dao.ObjectiveDictDao;
 import com.vvvapps.momentum.database.DatabaseConfig;
 
 import org.junit.After;
@@ -24,6 +24,7 @@ public abstract class DatabaseTestAbstract {
     protected MomentumDao momentumDao;
     protected DayDao dayDao;
     protected ObjectiveDao objectiveDao;
+    protected ObjectiveDictDao objectiveDictDao;
 
     @Before
     public void createDb() {
@@ -32,6 +33,7 @@ public abstract class DatabaseTestAbstract {
         momentumDao = db.getMomentumDao();
         dayDao = db.getDayDao();
         objectiveDao = db.getObjectiveDao();
+        objectiveDictDao = db.getObjectiveDictDao();
     }
 
     @After

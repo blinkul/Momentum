@@ -15,8 +15,7 @@ import android.widget.TextView;
 
 import com.vvvapps.momentum.R;
 import com.vvvapps.momentum.database.DatabaseConfig;
-import com.vvvapps.momentum.entities.Momentum;
-import com.vvvapps.momentum.entities.Objective;
+import com.vvvapps.momentum.entities.ObjectiveDict;
 import com.vvvapps.momentum.internal.ObjectiveViewAdapter;
 
 import java.util.Arrays;
@@ -37,7 +36,7 @@ public class KeepMomentumActivity extends AppCompatActivity {
     // -- DATABASE --
     private DatabaseConfig db;
 
-    private Momentum currentMomentum;
+//    private Momentum currentMomentum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +44,8 @@ public class KeepMomentumActivity extends AppCompatActivity {
         setContentView(R.layout.activity_keep_momentum);
 
         //TODO: Get the active momentum from DB
-        currentMomentum = new Momentum();
-        currentMomentum.setActive(false);
+//        currentMomentum = new Momentum();
+//        currentMomentum.setActive(false);
 
         db = Room.databaseBuilder(getApplicationContext(), DatabaseConfig.class, "momentum-app-db").build();
         initUI();
@@ -62,13 +61,13 @@ public class KeepMomentumActivity extends AppCompatActivity {
         idMomentumBarLayout = findViewById(R.id.idMomentumBarLayout);
         idRecyclerView = findViewById(R.id.idRecyclerView);
 
-        checkMomentumUI(currentMomentum);
+//        checkMomentumUI(currentMomentum);
 
         //TODO: Change adapter settings to take data from DB
         idRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        Objective o1 = new Objective("Workout");
-        Objective o2 = new Objective("Play with cat");
-        Objective o3 = new Objective("Run like Forrest");
+        ObjectiveDict o1 = new ObjectiveDict("Workout");
+        ObjectiveDict o2 = new ObjectiveDict("Play with cat");
+        ObjectiveDict o3 = new ObjectiveDict("Run like Forrest");
         idRecyclerView.setAdapter(new ObjectiveViewAdapter(Arrays.asList(o1, o2, o3)));
     }
 
@@ -79,26 +78,26 @@ public class KeepMomentumActivity extends AppCompatActivity {
 
     public void startMomentumPress(View view) {
         Log.d(TAG, getString(R.string.start_momentum) + " was pressed.");
-        currentMomentum.setActive(true);
+//        currentMomentum.setActive(true);
         dayNumber.setText("1");
-        checkMomentumUI(currentMomentum);
+//        checkMomentumUI(currentMomentum);
     }
     // -- UI Buttons Methods END --
 
     /**
      * Makes actions visible after Momentum started
      */
-    private void checkMomentumUI(Momentum momentum) {
-        if (momentum.isActive()) {
-            momentumBar.setMax(100);
-            idStartMomentumLayout.setVisibility(View.INVISIBLE);
-            idMomentumBarLayout.setVisibility(View.VISIBLE);
-            idRecyclerView.setVisibility(View.VISIBLE);
-        } else {
-            idStartMomentumLayout.setVisibility(View.VISIBLE);
-            idMomentumBarLayout.setVisibility(View.INVISIBLE);
-            idRecyclerView.setVisibility(View.INVISIBLE);
-        }
-    }
+//    private void checkMomentumUI(Momentum momentum) {
+//        if (momentum.isActive()) {
+//            momentumBar.setMax(100);
+//            idStartMomentumLayout.setVisibility(View.INVISIBLE);
+//            idMomentumBarLayout.setVisibility(View.VISIBLE);
+//            idRecyclerView.setVisibility(View.VISIBLE);
+//        } else {
+//            idStartMomentumLayout.setVisibility(View.VISIBLE);
+//            idMomentumBarLayout.setVisibility(View.INVISIBLE);
+//            idRecyclerView.setVisibility(View.INVISIBLE);
+//        }
+//    }
 
 }

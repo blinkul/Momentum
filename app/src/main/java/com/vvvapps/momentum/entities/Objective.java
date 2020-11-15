@@ -8,21 +8,28 @@ import androidx.room.PrimaryKey;
 
 import com.vvvapps.momentum.constants.SQLConstants;
 
-@Entity(indices = {@Index(value = {SQLConstants.OBJECTIVE_DESCRIPTION}, unique = true)})
+@Entity(indices = {@Index(value = {SQLConstants.OBJECTIVE_DAY_FK_ID, SQLConstants.OBJECTIVE_DICT_FK_ID}, unique = true)})
 public class Objective {
-
-    //@Ignore to not persist field
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = SQLConstants.OBJECTIVE_ID)
     private long objectiveId;
 
-    @ColumnInfo(name = SQLConstants.OBJECTIVE_DESCRIPTION)
+    @ColumnInfo(name = SQLConstants.OBJECTIVE_DAY_FK_ID)
     @NonNull
-    private String description;
+    private long dayId;
 
-    public Objective(String description) {
-        this.description = description;
+    @ColumnInfo(name = SQLConstants.OBJECTIVE_DICT_FK_ID)
+    @NonNull
+    private long objectiveDictId;
+
+    @ColumnInfo(name = SQLConstants.OBJECTIVE_IS_COMPLETE)
+    private boolean isComplete;
+
+    public Objective(long dayId, long objectiveDictId, boolean isComplete) {
+        this.isComplete = isComplete;
+        this.dayId = dayId;
+        this.objectiveDictId = objectiveDictId;
     }
 
     public long getObjectiveId() {
@@ -33,11 +40,27 @@ public class Objective {
         this.objectiveId = objectiveId;
     }
 
-    public String getDescription() {
-        return description;
+    public long getDayId() {
+        return dayId;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDayId(long dayId) {
+        this.dayId = dayId;
+    }
+
+    public long getObjectiveDictId() {
+        return objectiveDictId;
+    }
+
+    public void setObjectiveDictId(long objectiveDictId) {
+        this.objectiveDictId = objectiveDictId;
+    }
+
+    public boolean isComplete() {
+        return isComplete;
+    }
+
+    public void setComplete(boolean complete) {
+        isComplete = complete;
     }
 }

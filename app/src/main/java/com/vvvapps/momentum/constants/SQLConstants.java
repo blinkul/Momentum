@@ -16,6 +16,12 @@ public class SQLConstants {
 
     //Objective table
     public static final String OBJECTIVE_ID = "objective_id";
-    public static final String OBJECTIVE_DESCRIPTION = "description";
+    public static final String OBJECTIVE_DAY_FK_ID = "fk_objective_day_id";
+    public static final String OBJECTIVE_DICT_FK_ID = "fk_objective_dict_id";
+    public static final String OBJECTIVE_IS_COMPLETE = "is_complete";
+
+    //Objective dict table
+    public static final String OBJECTIVE_DICT_ID = "objective_dict_id";
+    public static final String OBJECTIVE_DICT_DESCRIPTION = "description_dict";
 
 }

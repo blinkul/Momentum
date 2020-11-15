@@ -4,24 +4,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.vvvapps.momentum.R;
-import com.vvvapps.momentum.entities.Objective;
+import com.vvvapps.momentum.entities.ObjectiveDict;
 
 import java.util.List;
 
 /**
- * Class which binds the {@link ObjectiveViewAdapter} to the {@link com.vvvapps.momentum.entities.Objective}
+ * Class which binds the {@link ObjectiveViewAdapter} to the {@link ObjectiveDict}
  */
 public class ObjectiveViewAdapter extends RecyclerView.Adapter<ObjectiveViewAdapter.ObjectiveViewHolder> {
 
-    private List<Objective> objectives;
+    private List<ObjectiveDict> objectives;
 
-    public ObjectiveViewAdapter(List<Objective> objectives) {
+    public ObjectiveViewAdapter(List<ObjectiveDict> objectives) {
         this.objectives = objectives;
     }
 

@@ -2,25 +2,18 @@ package com.vvvapps.momentum.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
-import androidx.room.Query;
-import androidx.room.Transaction;
 
-import com.vvvapps.momentum.entities.Momentum;
+import com.vvvapps.momentum.entities.ObjectiveDict;
 
 @Dao
-public interface MomentumDao {
+public interface ObjectiveDictDao {
 
     //  === Queries ===
 
     //  === Inserts ===
     @Insert
-    long insertMomentum(Momentum m);
+    long insertObjectiveDict(ObjectiveDict objectiveDict);
 
     //  === Updates ===
-
-
-
-
-
 
 }

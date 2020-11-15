@@ -6,9 +6,7 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 
 import com.vvvapps.momentum.entities.Day;
-import com.vvvapps.momentum.entities.DayObjectiveCrossRef;
-import com.vvvapps.momentum.entities.DayWithObjectives;
-import com.vvvapps.momentum.entities.MomentumWithDaysAndObjectives;
+import com.vvvapps.momentum.entities.relationship.DayWithObjectives;
 
 import java.time.LocalDate;
 
@@ -16,11 +14,13 @@ import java.time.LocalDate;
 public interface DayDao {
 
     //  === Queries ===
+    //TODO: Include in test
     @Transaction
     @Query("SELECT * FROM Day WHERE fk_momentum_id = :momentumId AND date = :date")
     DayWithObjectives queryDayWithObjectives(long momentumId, LocalDate date);
 
     //  === Inserts ===
+    //TODO: Include in test
     @Insert
     long insertDay(Day day);
 
