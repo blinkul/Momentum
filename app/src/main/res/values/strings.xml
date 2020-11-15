@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Momentum</string>
+
+    <!-- Keep Momentum Activity -->
+    <string name="day_no_template">999</string>
+    <string name="plan_day">Plan a Day</string>
+    <string name="start_momentum">Start Momentum</string>
+
+    <!-- Plan Day Activity -->
+</resources>
