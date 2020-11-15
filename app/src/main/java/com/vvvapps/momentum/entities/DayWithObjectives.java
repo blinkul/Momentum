@@ -20,6 +20,10 @@ public class DayWithObjectives {
     )
     private List<Objective> objectives;
 
+    public DayWithObjectives(Day day) {
+        this.day = day;
+    }
+
     public Day getDay() {
         return day;
     }

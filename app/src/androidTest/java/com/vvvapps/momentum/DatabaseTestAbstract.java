@@ -24,7 +24,6 @@ public abstract class DatabaseTestAbstract {
     protected MomentumDao momentumDao;
     protected DayDao dayDao;
     protected ObjectiveDao objectiveDao;
-    protected DayObjectiveCrossRefDao dayObjectiveCrossRefDao;
 
     @Before
     public void createDb() {
@@ -33,7 +32,6 @@ public abstract class DatabaseTestAbstract {
         momentumDao = db.getMomentumDao();
         dayDao = db.getDayDao();
         objectiveDao = db.getObjectiveDao();
-        dayObjectiveCrossRefDao = db.getDayObjectiveCrossRefDao();
     }
 
     @After

@@ -17,8 +17,7 @@ import com.vvvapps.momentum.entities.MomentumWithDaysAndObjectives;
 import com.vvvapps.momentum.entities.Objective;
 
 @Database(
-        entities = { Momentum.class, Day.class, Objective.class,
-                DayObjectiveCrossRef.class},
+        entities = { Momentum.class, Day.class, Objective.class, DayObjectiveCrossRef.class},
         version = 1
         )
 @TypeConverters({LocalDateConverterDatabase.class})
@@ -29,7 +28,4 @@ public abstract class DatabaseConfig extends RoomDatabase {
         public abstract DayDao getDayDao();
 
         public abstract ObjectiveDao getObjectiveDao();
-
-        public abstract DayObjectiveCrossRefDao getDayObjectiveCrossRefDao();
-
 }

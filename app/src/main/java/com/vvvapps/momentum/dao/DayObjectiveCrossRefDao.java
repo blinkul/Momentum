@@ -15,12 +15,8 @@ import java.util.List;
 public interface DayObjectiveCrossRefDao {
 
     //  === Queries ===
-    @Query("SELECT * FROM Day WHERE date = :date")
-    DayWithObjectives queryObjectivesForDay(LocalDate date);
 
     //  === Inserts ===
-    @Insert
-    long insertDayObjectiveCrossRef(DayObjectiveCrossRef dayObjective);
 
     //  === Updates ===
 }

@@ -30,7 +30,8 @@ public class Day {
     @ColumnInfo(name = SQLConstants.DAY_IS_SUCCESS)
     private boolean isSuccess;
 
-    public Day(LocalDate date) {
+    public Day(@NonNull long momentumId, LocalDate date) {
+        this.momentumId = momentumId;
         this.date = date;
     }
 
