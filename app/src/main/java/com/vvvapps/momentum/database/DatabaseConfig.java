@@ -18,7 +18,8 @@ import com.vvvapps.momentum.entities.Objective;
 
 @Database(
         entities = { Momentum.class, Day.class, Objective.class, DayObjectiveCrossRef.class},
-        version = 1
+        version = 1,
+        exportSchema = false
         )
 @TypeConverters({LocalDateConverterDatabase.class})
 public abstract class DatabaseConfig extends RoomDatabase {

@@ -25,6 +25,9 @@ public class Momentum {
     @ColumnInfo(name = SQLConstants.MOMENTUM_END_DATE)
     private LocalDate endDate;
 
+    @ColumnInfo(name = SQLConstants.MOMENTUM_IS_ACTIVE)
+    private boolean isActive;
+
     public Momentum() {
         startDate = LocalDate.now();
     }
@@ -51,5 +54,13 @@ public class Momentum {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }

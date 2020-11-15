@@ -2,10 +2,12 @@ package com.vvvapps.momentum.entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Index;
 
 import com.vvvapps.momentum.constants.SQLConstants;
 
-@Entity(primaryKeys = {SQLConstants.DAY_ID, SQLConstants.OBJECTIVE_ID})
+@Entity(indices = {@Index(SQLConstants.OBJECTIVE_ID)},
+        primaryKeys = {SQLConstants.DAY_ID, SQLConstants.OBJECTIVE_ID})
 public class DayObjectiveCrossRef {
 
     @ColumnInfo(name = SQLConstants.DAY_ID)
