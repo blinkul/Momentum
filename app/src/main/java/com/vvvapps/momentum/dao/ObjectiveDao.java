@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Transaction;
+import androidx.room.Update;
 
 import com.vvvapps.momentum.entities.Objective;
 import com.vvvapps.momentum.entities.relationship.ObjectiveAndDict;
@@ -25,4 +26,6 @@ public interface ObjectiveDao {
     long insertObjective(Objective objective);
 
     //  === Updates ===
+    @Update
+    void updateObjective(Objective objective);
 }

@@ -14,12 +14,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.vvvapps.momentum.R;
+import com.vvvapps.momentum.dao.MomentumDao;
 import com.vvvapps.momentum.database.DatabaseConfig;
 import com.vvvapps.momentum.entities.ObjectiveDict;
 import com.vvvapps.momentum.internal.ObjectiveViewAdapter;
 
 import java.util.Arrays;
 
+//TODO: At insert time of new momentum, function should set the previous momentum inactive and end date = LocalDate.now()
 public class KeepMomentumActivity extends AppCompatActivity {
 
     public static final String TAG = KeepMomentumActivity.class.getName();
@@ -99,5 +101,9 @@ public class KeepMomentumActivity extends AppCompatActivity {
 //            idRecyclerView.setVisibility(View.INVISIBLE);
 //        }
 //    }
+
+    public void createMomentum(DatabaseConfig db) {
+//        db.getMomentumDao().insertMomentum();
+    }
 
 }
