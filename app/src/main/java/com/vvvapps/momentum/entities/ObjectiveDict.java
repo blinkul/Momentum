@@ -15,7 +15,7 @@ public class ObjectiveDict {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = SQLConstants.OBJECTIVE_DICT_ID)
-    private long objectiveId;
+    private long objectiveDictId;
 
     @ColumnInfo(name = SQLConstants.OBJECTIVE_DICT_DESCRIPTION)
     @NonNull
@@ -25,19 +25,20 @@ public class ObjectiveDict {
         this.description = description;
     }
 
-    public long getObjectiveId() {
-        return objectiveId;
+    public long getObjectiveDictId() {
+        return objectiveDictId;
     }
 
-    public void setObjectiveId(long objectiveId) {
-        this.objectiveId = objectiveId;
+    public void setObjectiveDictId(long objectiveDictId) {
+        this.objectiveDictId = objectiveDictId;
     }
 
+    @NonNull
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(@NonNull String description) {
         this.description = description;
     }
 }

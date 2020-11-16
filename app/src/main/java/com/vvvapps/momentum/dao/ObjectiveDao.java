@@ -15,17 +15,12 @@ import java.util.List;
 public interface ObjectiveDao {
 
     //  === Queries ===
-    // TODO: create test for this
-    @Query("SELECT * FROM Objective ORDER BY fk_objective_dict_id ASC")
-    List<Objective> queryObjectives();
-
     @Transaction
     @Query("SELECT * FROM objective WHERE fk_objective_day_id = :dayId")
     List<ObjectiveAndDict> queryObjectivesByDayId(long dayId);
 
-
     //  === Inserts ===
-
+    @Transaction
     @Insert
     long insertObjective(Objective objective);
 
