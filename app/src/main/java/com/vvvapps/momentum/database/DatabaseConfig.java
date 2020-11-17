@@ -29,4 +29,5 @@ public abstract class DatabaseConfig extends RoomDatabase {
         public abstract ObjectiveDao getObjectiveDao();
 
         public abstract ObjectiveDictDao getObjectiveDictDao();
+
 }

@@ -1,0 +1,7 @@
+1. in gradle.build dependency:
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+2. In terminal go to:
+    C:\Users\anghe\AppData\Local\Android\Sdk\platform-tools>
+3. call:
+    adb forward tcp:8080 tcp:8080
+4. http://localhost:8080/

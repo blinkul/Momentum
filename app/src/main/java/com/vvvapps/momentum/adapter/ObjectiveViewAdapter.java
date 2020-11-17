@@ -1,16 +1,20 @@
-package com.vvvapps.momentum.internal;
+package com.vvvapps.momentum.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.vvvapps.momentum.R;
 import com.vvvapps.momentum.entities.ObjectiveDict;
+import com.vvvapps.momentum.entities.relationship.ObjectiveAndDict;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,10 +22,12 @@ import java.util.List;
  */
 public class ObjectiveViewAdapter extends RecyclerView.Adapter<ObjectiveViewAdapter.ObjectiveViewHolder> {
 
-    private List<ObjectiveDict> objectives;
+    private List<ObjectiveAndDict> objectives;
+    private Context context;
 
-    public ObjectiveViewAdapter(List<ObjectiveDict> objectives) {
+    public ObjectiveViewAdapter(Context context, List<ObjectiveAndDict> objectives) {
         this.objectives = objectives;
+        this.context = context;
     }
 
     public class ObjectiveViewHolder extends RecyclerView.ViewHolder {
@@ -49,9 +55,20 @@ public class ObjectiveViewAdapter extends RecyclerView.Adapter<ObjectiveViewAdap
 
     @Override
     public void onBindViewHolder(@NonNull ObjectiveViewHolder holder, int position) {
-        //TODO: How do I know which objective is done for a Day
-        holder.getCheckBox().setText(objectives.get(position).getDescription());
+
+        holder.getCheckBox().setText(objectives.get(position).getObjectiveDict().getDescription());
         holder.getCheckBox().setChecked(false);
+
+        //TODO: Does this works? I select the correct item?
+        holder.itemView.setOnClickListener(
+                v -> {
+                    ObjectiveAndDict o = objectives.get((int) getItemId(position));
+                    Toast.makeText(context,
+                                   String.format("id = %: %", o.getObjective().getObjectiveId(), o.getObjectiveDict().getDescription()),
+                                   Toast.LENGTH_LONG
+                    );
+                }
+        );
     }
 
     @Override

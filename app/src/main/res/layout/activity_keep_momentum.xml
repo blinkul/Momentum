@@ -20,13 +20,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
-            android:id="@+id/idFrameLayout"
+            android:id="@+id/comp_topLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical">
 
             <LinearLayout
-                android:id="@+id/idMomentumBarLayout"
+                android:id="@+id/comp_momentumBarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -36,14 +36,14 @@
                 android:paddingRight="10dp">
 
                 <ProgressBar
-                    android:id="@+id/idMomentumBar"
+                    android:id="@+id/comp_momentumBar"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="5" />
 
                 <TextView
-                    android:id="@+id/idDayNo"
+                    android:id="@+id/comp_dayNoText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -53,38 +53,36 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/idStartMomentumLayout"
+                android:id="@+id/comp_startMomentumLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/idStartMomentumButton"
+                    android:id="@+id/comp_startMomentumButton"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:onClick="startMomentumPress"
                     android:text="@string/start_momentum" />
             </LinearLayout>
         </FrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/idRecyclerView"
+            android:id="@+id/comp_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />
 
         <LinearLayout
-            android:id="@+id/IdMenuLayout"
+            android:id="@+id/comp_menuLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/idPlanADayButton"
+                android:id="@+id/comp_planDayButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="planDayPress"
                 android:text="@string/plan_day" />
         </LinearLayout>
     </LinearLayout>
